@@ -1,22 +1,43 @@
 body {
 	width:auto;
 }
+
+.bone{
+	background-image: url("bone_plain.jpg");
+	background-color:#7f3dbd;
+	height: 200px;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	position:relative;
+	font-size: -webkit-xxx-large;
+	line-height: 190px;
+}
+
+div.header{
+	text-align: center;
+	width: 100%;
+	float:none;
+}
+
+div.main{
+	text-align: center;
+	width: 100%;
+	float:none;
+}
+
 div.ivan{
 	text-align: center;
 	width: 33%;
 	float: left;
-}
-div.tempy{
-	text-align: center;
-	width: 100%;
-	float:none;
 }
 span.ivan{
 	text-align: center;
 	width: 50%;
 	float: left;
 }
-span.rocket{
+
+span.side_list{
 	text-align: center;
 	width: 25%;
 	float: left;

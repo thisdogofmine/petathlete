@@ -12,7 +12,7 @@ $conn = new mysqli($servername, $username, $password, $db);
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+//echo "Connected successfully";
 
 $sql = "Select * from dog_list";
 
@@ -36,9 +36,16 @@ $conn->close();
 		<META http-equiv="Expires" content="Tue, 20 Aug 1996 14:25:27 GMT">
 		
 		<script src="dog.js"></script>
-		<link rel="stylesheet" href="dog.css" type="text/css" media="screen" charset="utf-8" />
 		<script type="text/javascript" src="datepickercontrol.js"></script>
+		<style>
+		<?
+		include('dog.css');
+		//<link type="text/css" rel="stylesheet" href="dog.css">
+		
+		?>
+		</style>
 		<link type="text/css" rel="stylesheet" href="datepickercontrol.css">
+		
 	</head>
 	
 	<body>
@@ -46,15 +53,20 @@ $conn->close();
 		<input type="hidden" id="DPC_BUTTON_TITLE" value="Open calendar...">
 		<input type="hidden" id="DPC_MONTH_NAMES" value="['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']">
 		<input type="hidden" id="DPC_DAY_NAMES" value="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">
-		<div class="tempy">
+		<div class="header">
 			<h1>The Dogs New</h1>
 		</div>
-		<div class="tempy">
-			<span class="rocket">
-				<img src="bone_ivan.jpg" alt="Ivan" onclick=changephoto('ivan');><br />
+		<div class="main" >
+			<span class="side_list">
+				<div class="bone" onclick=changephoto('ivan');>Ivan</div>
+				<br />
 				<img src="bone_temporary.jpg" alt="Temporary" onclick=changephoto('tempy');><br />
 				<img src="bone_rio.jpg" alt="Rio" onclick=changephoto('rio');><br />
 				<img src="bone_callie1.jpg" alt="Callie" onclick=changephoto('callie');>
+				<img src="bone_abby.jpg" alt="Abby" onclick=changephoto('abby');><br />
+				<img src="bone_ajax.jpg" alt="Ajax" onclick=changephoto('ajax');><br />
+				<img src="bone_benji.jpg" alt="Benji" onclick=changephoto('benji');>
+				<img src="bone_stella.jpg" alt="Stella" onclick=changephoto('stella');>
 				
 			</span>
 			
@@ -64,11 +76,16 @@ $conn->close();
 				</div>
 			</span>
 			
-			<span class="rocket">
+			<span class="side_list">
 				<img src="bone_rocket.jpg" alt="Rocket" onclick=changephoto('rocket');><br />
 				<img src="bone_snoopy.jpg" alt="Snoopy" onclick=changephoto('snoopy');><br />
 				<img src="bone_kisses.jpg" alt="Kisses" onclick=changephoto('kisses');><br />
 				<img src="bone_petey.jpg" alt="Petey" onclick=changephoto('petey');>
+				<img src="bone_laska.jpg" alt="Laska" onclick=changephoto('laska');><br />
+				<img src="bone_herbie.jpg" alt="Herbie" onclick=changephoto('herbie');><br />
+				<img src="bone_jasper.jpg" alt="Jasper" onclick=changephoto('jasper');>
+				<img src="bone_freckles.jpg" alt="Freckles" onclick=changephoto('freckles');>
+				
 			</span>
 		</div>
 		
