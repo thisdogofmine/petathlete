@@ -1,0 +1,191 @@
+/*** ESSENTIAL STYLES ***/
+
+body {
+	margin:0;
+}
+
+
+div.navbar {
+	padding: 0px;
+	background-color: #00853F;
+	text-align: center;
+	font-weight: bold;
+	float: left;
+	width: 100%;
+	z-index: 1000;
+}
+
+
+.sf-menu, .sf-menu * {
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+	font-size: 12px;
+	font-weight: bold;
+	zoom: 1 !important;
+	border-collapse: separate;
+	font-family:arial;
+}
+.sf-menu li {
+	position: relative !important;
+}
+.sf-menu ul {
+	position: absolute !important;
+	display: none !important;
+	top: 100% !important;
+	left: 0 !important;
+	z-index: 10000 !important;
+}
+.sf-menu > li {
+	float: left !important;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block !important;
+	background-color:white !important;
+}
+
+.sf-menu a {
+	display: block !important;
+	position: relative !important;
+}
+.sf-menu ul ul {
+	top: 0 !important;
+	left: 100% !important;
+}
+
+.sf-menu ul {
+	box-shadow: 2px 2px 6px rgba(0,0,0,.2) !important;
+	min-width: 12em !important; /* allow long menu items to determine submenu width */
+	*width: 12em !important; /* no auto sub width for IE7, see white-space comment below */
+}
+.sf-menu a {
+	padding: .75em 1em !important;
+	text-decoration: none !important;
+	zoom: 1 !important; /* IE7 */
+}
+
+.sf-menu ul ul li a {
+	color: black !important;
+	font-weight: bold;
+}
+.sf-menu a {
+	color: white !important;
+	font-weight: bold;
+}
+.sf-menu li {
+	background: #00853F;
+	white-space: nowrap !important; 
+	-webkit-transition: background .2s !important;
+	transition: background .2s !important;
+	z-index: 10000;
+	
+background: -moz-linear-gradient(top, #000000 0%, #088742 14%, #008a00 65%, #005700 90%, #002400 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #000000 0%,#088742 14%,#008a00 65%,#005700 90%,#002400 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #000000 0%,#088742 14%,#008a00 65%,#005700 90%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#002400',GradientType=0 );
+}
+.sf-menu ul li {
+	background: #00853F !important;
+	z-index: 10000 !important;
+}
+.sf-menu ul ul li {
+	background: #A5D867 !important;
+	text-align: left;
+}
+
+.sf-menu ul ul li:hover{
+	background-color: #A0CFEB !important;
+	color: white !important;
+}
+
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+	background: #A5D867 !important;
+	-webkit-transition: none;
+	transition: none;
+}
+
+.sf-menu li a:hover {
+	color: black !important;
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+	padding-right: 2.5em;
+	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 1em;
+	margin-top: -3px;
+	height: 0;
+	width: 0;
+	/* order of following 3 rules important for fallbacks to work */
+	border: 5px solid transparent;
+	border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-top-color: rgba(255,255,255,.5);
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+	border-top-color: white; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+	margin-top: -5px;
+	margin-right: -3px;
+	border-color: transparent;
+	border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-left-color: rgba(255,255,255,.5);
+}
+.sf-menu ul li:hover{
+    background-color: #A5D867 !important;
+    color: black !important;
+    z-index: 1000;
+}
+
+.sf-menu ul li a:hover{
+    color: black !important;
+}
+
+.sf-menu ul li ul:hover{
+    background-color: green !important;
+    color: black !important;
+}
+
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: white;
+}
+
+.menu_group_div{
+	float:left;
+}
+
+#menu_group_select{
+	height:33px;
+	background-color:#F0F0F0;
+	font-size:16px;
+	font-weight:bolder;
+	border: solid 1px;
+}
+#menu_group_select > option{
+	background-color:#F0F0F0;
+	font-size:16px;
+	font-weight:bolder;
+}
+#menu_logout, #menu_help{
+	float:right !important;
+}
+
+#nav{
+background: -moz-linear-gradient(top, #000000 0%, #088742 14%, #008a00 65%, #005700 90%, #002400 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #000000 0%,#088742 14%,#008a00 65%,#005700 90%,#002400 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #000000 0%,#088742 14%,#008a00 65%,#005700 90%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#002400',GradientType=0 );
+}

@@ -1,50 +1,35 @@
 <?php
-
-$servername = "localhost";
-$username = "whatare_01";
-$password = "Wilddog.01";
-$db = "whatare_new";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-
-// Check connection
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-}
-//echo "Connected successfully";
-
-$sql = "Select * from dog_list";
-
-$result = $conn->query($sql);
-
-if($result->num_rows > 0){
-	while($row = $result->fetch_assoc()){
-		echo " id: {$row['id']} - {$row['dog_name']} - dob: {$row['dob']} -weight: {$row['weight']} <br>";
-		
-	}
-}else{
-	echo 'no results';
-}
-$conn->close();
-
+require_once("nav_bar.php");
 ?>
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-8">
 		<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
 		<META http-equiv="Expires" content="Tue, 20 Aug 1996 14:25:27 GMT">
 		
-		<script src="dog.js"></script>
-		<script type="text/javascript" src="datepickercontrol.js"></script>
-		<style>
-		<?
-		include('dog.css');
-		//<link type="text/css" rel="stylesheet" href="dog.css">
+		<title>PetAthlete</title>
 		
-		?>
+		<script>
+			<?
+			//<script src="js/dog.js"></script>
+			
+			include('js/dog.js');
+			?>
+
+
+		</script>
+		<script type="text/javascript" src="js/datepickercontrol.js"></script>
+		
+		<style>
+			<?
+			include('css/dog.css');
+			include('css/menu.css');
+			//<link type="text/css" rel="stylesheet" href="dog.css">
+			?>
 		</style>
-		<link type="text/css" rel="stylesheet" href="datepickercontrol.css">
+		<link type="text/css" rel="stylesheet" href="css/datepickercontrol.css">
 		
 	</head>
 	
@@ -53,20 +38,29 @@ $conn->close();
 		<input type="hidden" id="DPC_BUTTON_TITLE" value="Open calendar...">
 		<input type="hidden" id="DPC_MONTH_NAMES" value="['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']">
 		<input type="hidden" id="DPC_DAY_NAMES" value="['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">
+		
+		
+		
 		<div class="header">
-			<h1>The Dogs New</h1>
+			<h1>Pet Athlete: The home for pet sports</h1>
 		</div>
+		
+		<div id="nav"  class="navbar" style='z-index:2001;' >
+			<? dash($selected_menu_group); ?>
+		</div>
+
 		<div class="main" >
 			<span class="side_list">
-				<div class="bone" onclick=changephoto('ivan');>Ivan</div>
-				<br />
-				<img src="bone_temporary.jpg" alt="Temporary" onclick=changephoto('tempy');><br />
-				<img src="bone_rio.jpg" alt="Rio" onclick=changephoto('rio');><br />
-				<img src="bone_callie1.jpg" alt="Callie" onclick=changephoto('callie');>
-				<img src="bone_abby.jpg" alt="Abby" onclick=changephoto('abby');><br />
-				<img src="bone_ajax.jpg" alt="Ajax" onclick=changephoto('ajax');><br />
-				<img src="bone_benji.jpg" alt="Benji" onclick=changephoto('benji');>
-				<img src="bone_stella.jpg" alt="Stella" onclick=changephoto('stella');>
+				<!--div class="bone" onclick=changephoto('ivan');>Ivan</div>
+				<br-->
+				<img src="images/bone_ivan.jpg" alt="Ivan" onclick=changephoto('ivan');><br>
+				<img src="images/bone_temporary.jpg" alt="Temporary" onclick=changephoto('tempy');><br>
+				<img src="images/bone_rio.jpg" alt="Rio" onclick=changephoto('rio');><br>
+				<img src="images/bone_callie1.jpg" alt="Callie" onclick=changephoto('callie');><br>
+				<img src="images/bone_abby.jpg" alt="Abby" onclick=changephoto('abby');><br>
+				<img src="images/bone_ajax.jpg" alt="Ajax" onclick=changephoto('ajax');><br>
+				<img src="images/bone_benji.jpg" alt="Benji" onclick=changephoto('benji');><br>
+				<img src="images/bone_stella.jpg" alt="Stella" onclick=changephoto('stella');><br>
 				
 			</span>
 			
@@ -77,14 +71,14 @@ $conn->close();
 			</span>
 			
 			<span class="side_list">
-				<img src="bone_rocket.jpg" alt="Rocket" onclick=changephoto('rocket');><br />
-				<img src="bone_snoopy.jpg" alt="Snoopy" onclick=changephoto('snoopy');><br />
-				<img src="bone_kisses.jpg" alt="Kisses" onclick=changephoto('kisses');><br />
-				<img src="bone_petey.jpg" alt="Petey" onclick=changephoto('petey');>
-				<img src="bone_laska.jpg" alt="Laska" onclick=changephoto('laska');><br />
-				<img src="bone_herbie.jpg" alt="Herbie" onclick=changephoto('herbie');><br />
-				<img src="bone_jasper.jpg" alt="Jasper" onclick=changephoto('jasper');>
-				<img src="bone_freckles.jpg" alt="Freckles" onclick=changephoto('freckles');>
+				<img src="images/bone_rocket.jpg" alt="Rocket" onclick=changephoto('rocket');><br>
+				<img src="images/bone_snoopy.jpg" alt="Snoopy" onclick=changephoto('snoopy');><br>
+				<img src="images/bone_kisses.jpg" alt="Kisses" onclick=changephoto('kisses');><br>
+				<img src="images/bone_petey.jpg" alt="Petey" onclick=changephoto('petey');><br>
+				<img src="images/bone_laska.jpg" alt="Laska" onclick=changephoto('laska');><br>
+				<img src="images/bone_herbie.jpg" alt="Herbie" onclick=changephoto('herbie');><br>
+				<img src="images/bone_jasper.jpg" alt="Jasper" onclick=changephoto('jasper');><br>
+				<img src="images/bone_freckles.jpg" alt="Freckles" onclick=changephoto('freckles');><br>
 				
 			</span>
 		</div>
@@ -92,7 +86,7 @@ $conn->close();
 		<div class="rio">
 			<br>
 			<hr>
-				<img src="bone2.jpg" alt="bone">
+				<img src="images/bone2.jpg" alt="bone">
 			<hr>
 		</div>
 		
